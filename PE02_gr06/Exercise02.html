@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="css/Exercise02.css">
+<script type="text/javascript" src="js/Addon/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/payment.js"></script>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="./image/Logo.png">
+	<title>All Guide For You</title>
+</head>
+<body>
+<div id="header">
+	<img src="./image/Logo.png">
+	<h1>All Guide For You</h1>	
+</div>
+<div id="menu">
+	<ul id="menulist">
+		<li><p><a href="">Home</a></p></li>
+		<li><p><a href="">Food</a></p></li>
+		<li><p><a href="">Fun</a></p></li>
+		<li><p><a href="">Sights</a></p></li>
+		<li class="select"><p><a href="" >Lodging</a></p></li>
+	</ul>
+</div>
+<div id="body">
+	<form id="formbody" onsubmit="Vaildation()">
+	<div class="payform">
+		<h3>Shipping Address</h3>
+		<div id="shipping_address">
+			<p>Name*</p>
+			<input id="in_name" type="text" pattern="[A-Za-z]{1,}" title="Enter Your Name" required>
+			<p>Surname*</p>
+			<input id="in_surname" type="text" pattern="[A-Za-z]{1,}" title="Enter Your Surname" required>
+			<p>E-mail*</p>
+			<input id="in_email" type="text" placeholder="username@domain.ext" required>
+			<p>Shipping Address*</p>
+			<input id="in_address" type="text" title="Enter Your Address" required>
+			<p>Telephone number</p>
+			<input id="in_phone" class="onlyInsertnum" type ="text" placeholder="Only 9 numbers" title="Only 9 Numbers" maxlength="9">
+		</div>
+	</div>
+	<div class="payform">
+		<h3>User Information</h3>
+		<div id="user_info">
+			<p>Username</p>
+			<input id="in_username" type="text">
+			<p>Password</p>
+			<input id="in_pw" class="TogglePW" type="password" maxlength="8">
+			<p>Confirm Password</p>
+			<input id="in_cpw" class="TogglePW" type="password" maxlength="8">
+			<p>Profile image</p>
+			<div class="inline-content">
+				<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+				<div class="fileUpload btn btn-primary">
+				    <span>Upload</span>
+				    <input id="uploadBtn" type="file" class="upload" value="Upload"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="payform">
+		<h3>Shipping Information</h3>
+		<div id="shipping_info">
+			<div>
+				<p>Total Amount</p>
+				<h3 id="total_amount">28</h3>
+				<p>Total Price</p>
+				<div id="t_price">
+					<h3>$</h3>
+					<h3 id="toal_price">8946</h3>
+				</div>
+			</div>
+			<p>Payment</p>
+			<div id="pay_div">
+				<input id="pay_paypal" type="radio" name="pay_type" checked>
+				<img class="pay_icon80" src="image/paypal.jpg">
+				<input id="pay_credit" type="radio" name="pay_type">
+				<img class="pay_icon80" src="image/cards.jpg">
+			</div>
+			<a id="info_paypal" href="">Go to Paypal</a>
+			<div id="info_credit">
+				<div id="card_div">
+					<input id="credit_visa" type="radio" name="card" checked>
+					<img class="pay_icon50" src="image/visa.jpg">
+					<input id="credit_master" type="radio" name="card">
+					<img class="pay_icon50" src="image/master.jpg">
+					<input id="credit_amex" type="radio" name="card">
+					<img class="pay_icon50" src="image/amex.jpg">
+				</div>
+				<p>Card Number</p>
+				<div id="card_num">
+					<input class="onlyInsertnum ToggleRequire" type="text" maxlength="4">
+					<p>-</p>
+					<input class="onlyInsertnum ToggleRequire" type="text" maxlength="4">
+					<p>-</p>
+					<input class="onlyInsertnum ToggleRequire" type="text" maxlength="4">
+					<p>-</p>
+					<input class="onlyInsertnum ToggleRequire" type="text" maxlength="4">
+				</div>
+				<p>Expiration Date</p>
+				<div id="card_date">
+					<select id="card_mon" value="1"></select>
+					<p>/</p>
+					<select id="card_year" value="2015"></select>
+					<p>(mm/yy)</p>
+				</div>
+				<p>Security Code(CVV)</p>
+				<input id="cvv" class="onlyInsertnum" type="password" maxlength="3" ToggleRequire>
+				<p>Name</p>
+				<input id="card_name" class="ToggleRequire" type="text">
+			</div>
+		</div>
+	</div>
+	<div id="submitbox">
+		<div>
+			<input id="cx_agree" type="checkbox" required>
+			<p>I have read and agree to terms of use, privacy policy and use of cookies
+		</div>
+		<div>
+			<input type="submit" value="Submit">
+		</div>
+	</div>
+	</form>
+</div>
+<div id="footer">
+	<div id="copyright">
+		<p>ⓒGroupID6 : Jungki Moon, Nelson</p>
+	</div>
+	<div id="links">
+		<img src="./image/icon_mail.png">
+		<img src="./image/icon_fb.png">
+		<img src="./image/icon_twitter.png">
+	</div>
+</div>
+</body>
+</html>
